@@ -1,0 +1,947 @@
+<!doctype html>
+<html lang="es" class="loading">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      2o052o05
+    </title>
+    <meta name="description" content="Fotografías y proyectos de 2o052o05.">
+    <link rel="preload" href="assets/Helvetica.ttf" as="font" type="font/ttf" crossorigin>
+    <style>
+@font-face {
+  font-family: Helvetica;
+  src: url('assets/Helvetica.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+img, video, a { -webkit-user-drag: none; }
+
+html, body {
+  margin: 0;
+}
+
+html { scrollbar-width: none; }
+html::-webkit-scrollbar { display: none; }
+
+body {
+  display: grid;
+  grid-template-columns: min(55%, calc(56.25dvh + 32px)) 1fr;
+  min-height: 100dvh;
+  background: #fff;
+  color: #111;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.gallery {
+  min-height: 0;
+  min-width: 0;
+  padding: 0;
+  background: #fff;
+}
+
+.gallery img { filter: grayscale(0) invert(0); transition: filter 1.2s ease-in-out; }
+.gallery.monochrome img { filter: grayscale(1) invert(1); }
+@media (prefers-reduced-motion: reduce) {
+  .gallery img { transition: none; }
+}
+
+figure {
+  display: flex;
+  align-items: stretch;
+  width: min(100%, calc(56.25dvh + 32px));
+  max-width: 100%;
+  margin: 0;
+}
+
+figure.portrait {
+  width: min(100%, calc(56.25dvh + 32px));
+}
+
+figure.portrait img {
+  width: calc(100% - 32px);
+  aspect-ratio: 9 / 16;
+  object-fit: fill;
+}
+
+img {
+  display: block;
+  min-width: 0;
+  width: calc(100% - 32px);
+  height: auto;
+  max-width: calc(100% - 32px);
+  max-height: 100dvh;
+  object-fit: contain;
+  align-self: flex-start;
+}
+
+figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 16px;
+  flex: 0 0 32px;
+  width: 32px;
+  padding: 8px;
+  writing-mode: vertical-rl;
+  background: #fff;
+  color: #111;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+figcaption span, figcaption time { white-space: nowrap; }
+
+aside {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100dvh;
+  min-width: 0;
+  min-height: 0;
+  padding: 10px 32px 10px 0;
+  overflow: clip;
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 { display: flex; justify-content: center; max-width: 100%; margin: 0; }
+.logo { width: 240px; max-width: 100%; height: auto; max-height: none; }
+nav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 180px));
+  justify-content: center;
+  align-items: center;
+  column-gap: 52px;
+  row-gap: 20px;
+  width: 100%;
+  margin-top: 12px;
+}
+
+nav button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+nav button {
+  cursor: pointer;
+}
+
+nav .barcode-art { display: block; width: 100%; height: 42px; overflow: hidden; }
+nav .barcode-art img { display: block; width: 100%; max-width: none; height: 56px; max-height: none; object-fit: fill; }
+nav .barcode-caption { margin-top: 3px; color: #111; font: 12px/1.1 Helvetica, Arial, sans-serif; text-transform: uppercase; white-space: nowrap; }
+button:focus-visible { outline: 1px solid #111; outline-offset: 4px; }
+.gallery:focus-visible { outline: 2px solid #888; outline-offset: -2px; }
+
+
+
+h1, nav { flex-shrink: 0; }
+
+.email { flex-shrink: 0; margin-top: 0; color: #666; font-size: 13px; line-height: 1.2; text-decoration: none; }
+.email:hover { text-decoration: underline; text-underline-offset: 3px; }
+.email:focus-visible { outline: 1px solid #111; outline-offset: 4px; }
+
+.beatpost {
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  flex: none;
+  width: min(100%, 760px, var(--beatpost-size, calc(100dvh - 300px)));
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  margin-top: 10px;
+  background: #fff;
+}
+
+.beatpost .azul {
+  position: relative;
+  flex: none;
+  width: 100%;
+  height: 56.25cqw;
+  overflow: hidden;
+  contain: size layout paint;
+  background: #0000ff;
+}
+
+.beatpost .video {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  pointer-events: none;
+}
+
+.beatpost .azul::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #0000ff;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.beatpost .con-senal::after { opacity: 0; }
+.beatpost.static .azul::after { opacity: 0; }
+
+.beatpost .cartel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10.5em;
+  max-width: 100%;
+  padding: 1.25em .75em;
+  background: rgb(0 0 0 / 50%);
+  color: #fff;
+  font: 400 1.8cqw / 1 'Lucida Console', Consolas, monospace;
+  letter-spacing: .12em;
+  white-space: nowrap;
+}
+
+.beatpost .hdmi {
+  position: absolute;
+  top: 5%;
+  right: 4%;
+  z-index: 2;
+  padding: .65em .8em;
+  background: rgb(0 0 0 / 50%);
+  color: #fff;
+  font: 400 2cqw / 1 'Lucida Console', Consolas, monospace;
+}
+
+.beatpost .info {
+  flex: none;
+  padding: 1cqw 2%;
+  color: #222;
+  font: 1.5cqw / 1.6 'Lucida Console', Consolas, monospace;
+  white-space: nowrap;
+}
+
+.beatpost .datos {
+  display: grid;
+  grid-template-columns: 12fr 8fr 6fr 15fr 8fr 6fr 13fr 13fr 11fr;
+  align-items: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.beatpost .espectrograma { flex: 1; min-height: 0; position: relative; overflow: hidden; background: #fff url('assets/spectrum.png') left top / 600% 100% repeat-x; }
+.beatpost canvas { position: absolute; display: block; width: 100%; height: 100%; }
+
+@media (max-width: 820px) {
+  body { display: flex; flex-direction: column; }
+  aside { order: -1; position: static; width: 100%; height: auto; padding: 10px 16px 24px; overflow: visible; }
+  .logo { width: 210px; }
+  .beatpost { width: min(100%, 400px); margin-top: 12px; }
+  nav { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 26px; row-gap: 18px; width: min(100%, 346px); }
+  nav button { width: 100%; min-height: 44px; }
+  .gallery { width: 100%; }
+  figure, figure.portrait { width: 100%; }
+  .gallery img, figure.portrait img { width: calc(100% - 28px); max-width: calc(100% - 28px); max-height: none; }
+  figcaption { flex-basis: 28px; width: 28px; padding: 6px; gap: 12px; font-size: 11px; }
+}
+
+.beatpost .monitor-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  object-fit: contain;
+  background: #000;
+}
+.beatpost .monitor-photo[hidden] { display: none; }
+
+.beatpost .tv-noise {
+  display: none;
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  image-rendering: auto;
+  pointer-events: none;
+}
+
+.beatpost.static .tv-noise { display: block; }
+.drumkits-screen {
+  display: none;
+  position: absolute;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 8%;
+  padding: 3% 7%;
+  background: linear-gradient(120deg, #fff, #e4e5e7, #fff, #f2f2f2);
+  background-size: 300% 300%;
+}
+.show-drumkits .drumkits-screen { display: flex; animation: white-gradient 9s ease-in-out infinite alternate; }
+.sd-card { position: relative; height: 100%; min-width: 0; aspect-ratio: 2720 / 3602; }
+.sd-card img { width: 100%; max-width: none; height: 100%; max-height: none; object-fit: contain; }
+.sd-label { position: absolute; inset: 37% 10% auto; display: flex; flex-direction: column; gap: .4em; color: #aaa; text-align: center; font: 2.5cqw/1.1 Helvetica, Arial, sans-serif; }
+@keyframes white-gradient { from { background-position: 0% 30%; } to { background-position: 100% 70%; } }
+@media (prefers-reduced-motion: reduce) { .show-drumkits .drumkits-screen { animation: none; } }
+.sd-card { border: 0; padding: 0; background: none; cursor: pointer; font: inherit; }
+
+.drumkits-screen { padding-bottom: 8%; }
+.tv-ticker { display: none; position: absolute; inset: auto 0 0; height: 5cqw; overflow: hidden; z-index: 2; background: #171717; color: #fff; font: 700 2cqw/5cqw Helvetica, Arial, sans-serif; pointer-events: none; }
+.show-drumkits .tv-ticker { display: block; }
+.beatpost.static .tv-ticker { display: none; }
+.tv-ticker-track { display: flex; width: max-content; animation: tv-ticker 25s linear infinite; }
+.tv-ticker-track span { flex: none; white-space: nowrap; padding-right: 4em; }
+@keyframes tv-ticker { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+  .tv-ticker { height: auto; max-height: 10cqw; font-size: 1.7cqw; line-height: 1.3; padding: .6cqw 1cqw; }
+  .tv-ticker-track { width: 100%; animation: none; }
+  .tv-ticker-track span { flex: 1; white-space: normal; padding: 0; }
+  .tv-ticker-track span[aria-hidden] { display: none; }
+}
+
+.beatpost .tv-logo { display: none; position: absolute; top: -2%; left: -1%; z-index: 2; width: 12%; mix-blend-mode: multiply; max-width: none; height: auto; max-height: 18%; object-fit: contain; pointer-events: none; }
+.show-drumkits .tv-logo { display: block; animation: tv-logo-blink 1.6s steps(1, end) infinite; }
+.beatpost.static .tv-logo { display: none; }
+@keyframes tv-logo-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .show-drumkits .tv-logo { animation: none; } }
+html.loading aside { visibility: hidden; }
+.beatpost:not([data-screen]) .azul { background: #fff; }
+.beatpost:not([data-screen]) .azul::after { background: #fff; }
+.beatpost:not([data-screen]) .cartel { visibility: hidden; }
+
+
+
+
+.coming-soon { position: absolute; inset: 0; display: grid; place-items: center; background: #fff; color: #111; font: 400 3cqw/1 Helvetica, Arial, sans-serif; }
+.coming-soon[hidden] { display: none; }
+    </style>
+    <link rel="preload" as="image" href="assets/spectrum.png">
+  </head>
+  <body>
+    <main class="gallery" tabindex="0" aria-label="Fotografías">
+      <figure>
+        <img src="assets/IMG_1416.jpeg" width="2268" height="4032" alt="Edificio y cables iluminados de noche" draggable="false">
+        <figcaption>
+          <time datetime="2026-03-17">17 marzo 2026</time>
+          <span>
+            23:35
+          </span>
+          <span>
+            5.1 mm
+          </span>
+          <span>
+            f/1.6
+          </span>
+          <span>
+            1/25 s
+          </span>
+          <span>
+            ISO 500
+          </span>
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="assets/IMG_7367.jpeg" width="1738" height="3088" alt="Detalle de una camiseta negra con bordado blanco" loading="lazy" draggable="false">
+        <figcaption>
+          <time datetime="2026-08-21">21 agosto 2026</time>
+          <span>
+            12:46
+          </span>
+          <span>
+            2.71 mm
+          </span>
+          <span>
+            f/2.2
+          </span>
+          <span>
+            1/15 s
+          </span>
+          <span>
+            ISO 2000
+          </span>
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="assets/IMG_8890.jpeg" width="2268" height="4032" alt="Zapatillas negras con detalles azules" loading="lazy" draggable="false">
+        <figcaption>
+          <time datetime="2026-09-28">28 septiembre 2026</time>
+          <span>
+            12:54
+          </span>
+          <span>
+            5.1 mm
+          </span>
+          <span>
+            f/1.6
+          </span>
+          <span>
+            1/15 s
+          </span>
+          <span>
+            ISO 3200
+          </span>
+        </figcaption>
+      </figure>
+      <figure class="portrait">
+        <img src="assets/IMG_8894.jpg" width="1125" height="2117" alt="Captura de una foto de zapatillas negras y encendedores con su información original" loading="lazy" draggable="false">
+        <figcaption>
+          <time datetime="2026-09-25">25 septiembre 2026</time>
+          <span>
+            03:40
+          </span>
+          <span>
+            26 mm
+          </span>
+          <span>
+            f/1.6
+          </span>
+          <span>
+            1/25 s
+          </span>
+          <span>
+            ISO 1000
+          </span>
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="assets/gem.jpg" width="1255" height="848" alt="Caja de disco transparente con gráfica de Presagios y firma de Luca Mateo" loading="lazy" draggable="false">
+        <figcaption>
+          <span>
+            1255 × 848 px
+          </span>
+          <span>
+            JPEG
+          </span>
+        </figcaption>
+      </figure>
+    </main>
+    <aside>
+      <h1>
+        <img class="logo" src="assets/logo.png" width="1920" height="1080" alt="2o052o05" draggable="false">
+      </h1>
+      <a class="email" href="mailto:e2o05@icloud.com" draggable="false">
+        e2o05@icloud.com
+      </a>
+      <section class="beatpost" aria-label="Beatpost de 2o05">
+        <div class="azul" id="monitor-screen">
+          <video class="video" src="assets/video1.mp4" autoplay muted loop playsinline disableremoteplayback disablepictureinpicture controlslist="nodownload noremoteplayback nofullscreen" x-webkit-airplay="deny" preload="auto" draggable="false">
+          </video>
+          <img class="monitor-photo" alt="" hidden draggable="false">
+          <div class="drumkits-screen">
+            <button type="button" class="sd-card" data-kit="stash"><img src="assets/sdcard.webp" alt="" draggable="false"><div class="sd-label"><span>stash kit</span></div></button>
+            <button type="button" class="sd-card" data-kit="drums"><img src="assets/sdcard.webp" alt="" draggable="false"><div class="sd-label"><span>drum kit</span></div></button>
+          </div>
+          <div class="coming-soon" hidden>coming soon</div>
+          <img class="tv-logo" src="assets/tvlogo.png" alt="TV" draggable="false">
+          <div class="tv-ticker"><div class="tv-ticker-track"><span></span><span aria-hidden="true"></span></div></div>
+          <div class="cartel">
+            2o05
+          </div>
+          <canvas class="tv-noise" width="320" height="180" aria-hidden="true"></canvas>
+          <div class="hdmi" hidden>
+            HDMI-1
+          </div>
+        </div>
+        <div class="info" aria-label="Señal de TV y audio">
+          <div class="datos">
+            <span>
+              1920×1080
+            </span>
+            <span id="fps-info">
+              2 FPS
+            </span>
+            <span>
+              16:9
+            </span>
+            <span id="color-info">
+              YCbCr 4:2:2
+            </span>
+            <span id="bits-info">
+              8-bit
+            </span>
+            <span>
+              PCM
+            </span>
+            <span id="nivel">
+              −∞ dBFS
+            </span>
+            <span id="frecuencia">
+              — Hz
+            </span>
+            <span id="hora">
+              00:00:00
+            </span>
+          </div>
+        </div>
+        <div class="espectrograma" role="img" aria-label="Espectrograma de microsound">
+          <canvas id="espectrograma" width="960" height="300">
+          </canvas>
+        </div>
+      </section>
+      <nav aria-label="Navegación">
+        <button type="button" data-screen="9greed" aria-pressed="false" aria-controls="monitor-screen">
+          <span class="barcode-art"><img src="assets/9greed.gif" alt="" draggable="false"></span>
+          <span class="barcode-caption">9greed</span>
+        </button>
+        <button type="button" data-screen="prynts" aria-pressed="false" aria-controls="monitor-screen">
+          <span class="barcode-art"><img src="assets/PRYNTS.gif" alt="" draggable="false"></span>
+          <span class="barcode-caption">Prynts</span>
+        </button>
+        <button type="button" data-screen="contact" data-photo="assets/foto1.jpg" aria-pressed="false" aria-controls="monitor-screen">
+          <span class="barcode-art"><img src="assets/contacto.gif" alt="" draggable="false"></span>
+          <span class="barcode-caption">Contacto</span>
+        </button>
+        <button type="button" data-photo="assets/sdcard.webp" data-screen="drumkits" aria-pressed="false" aria-controls="monitor-screen">
+          <span class="barcode-art"><img src="assets/drumkits.gif" alt="" draggable="false"></span>
+          <span class="barcode-caption">Drumkits</span>
+        </button>
+      </nav>
+    </aside>
+    <script>
+(() => {
+  const copy = {
+    es: {
+      description: 'Fotografías y proyectos de 2o052o05.',
+      gallery: 'Fotografías',
+      beatpost: 'Beatpost de 2o05',
+      signal: 'Señal de TV y audio',
+      spectrum: 'Espectrograma de microsound',
+      projects: 'Navegación',
+      contact: 'Contacto',
+      commercial: 'COMPRE LOS NUEVOS STASH KITS DE "2o"!!! NUEVOS Y ACTUALIZADOS, A PRECIO REDUCIDO, LLAME A 0800-PRESAGE-2o05 Y ORDENE EL SUYO AHORA MISMO!!! SUJETO A TÉRMINOS Y CONDICIONES.',
+      photos: [
+        'Edificio y cables iluminados de noche',
+        'Detalle de una camiseta negra con bordado blanco',
+        'Zapatillas negras con detalles azules',
+        'Captura de una foto de zapatillas negras y encendedores con su información original',
+        'Caja de disco transparente con gráfica de Presagios y firma de Luca Mateo'
+      ],
+    },
+    en: {
+      description: 'Photographs and projects by 2o052o05.',
+      gallery: 'Photographs',
+      beatpost: 'Beatpost by 2o05',
+      signal: 'TV and audio signal',
+      spectrum: 'Microsound spectrogram',
+      projects: 'Navigation',
+      contact: 'Contact',
+      commercial: 'BUY THE NEW STASH KITS BY "2o"!!! NEW AND UPDATED, NOW AT A REDUCED PRICE, CALL 0800-PRESAGE-2o05 AND ORDER YOURS RIGHT NOW!!! TERMS AND CONDITIONS APPLY.',
+      photos: [
+        'Building and overhead wires illuminated at night',
+        'Detail of a black T-shirt with white embroidery',
+        'Black sneakers with blue details',
+        'Screenshot of black sneakers and lighters with the original photo information',
+        'Clear CD case with Presagios artwork and Luca Mateo’s signature'
+      ],
+    }
+  };
+  const photos = ['IMG_1416.jpeg', 'IMG_7367.jpeg', 'IMG_8890.jpeg', 'IMG_8894.jpg', 'gem.jpg'];
+
+  function preferredLocale() {
+    const languages = [navigator.language, ...(navigator.languages || [])];
+    const locales = languages.flatMap(language => {
+      if (typeof language !== 'string' || !language) return [];
+      try { return Intl.getCanonicalLocales(language); }
+      catch { return []; }
+    });
+    return locales.find(locale => /^en(-|$)/i.test(locale))
+      || locales.find(locale => /^es(-|$)/i.test(locale))
+      || 'en';
+  }
+
+  function setText(selector, text) {
+    const element = document.querySelector(selector);
+    if (element) element.textContent = text;
+  }
+
+  function setAttribute(selector, attribute, value) {
+    const element = document.querySelector(selector);
+    if (element) element.setAttribute(attribute, value);
+  }
+
+  function localize() {
+    const locale = preferredLocale();
+    const language = locale.split('-')[0];
+    const text = copy[language];
+    document.documentElement.lang = language;
+    setAttribute('meta[name="description"]', 'content', text.description);
+    setAttribute('.gallery', 'aria-label', text.gallery);
+    setAttribute('.beatpost', 'aria-label', text.beatpost);
+    setAttribute('.beatpost .info', 'aria-label', text.signal);
+    setAttribute('.espectrograma', 'aria-label', text.spectrum);
+    setAttribute('aside nav', 'aria-label', text.projects);
+    setText('button[data-photo="assets/foto1.jpg"] .barcode-caption', text.contact);
+    document.querySelectorAll('.tv-ticker-track span').forEach(element => { element.textContent = text.commercial; });
+    photos.forEach((photo, index) => {
+      setAttribute(`.gallery img[src$="/${photo}"]`, 'alt', text.photos[index]);
+    });
+    const dates = new Intl.DateTimeFormat(locale, {
+      day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC',
+      calendar: 'gregory', numberingSystem: 'latn'
+    });
+    document.querySelectorAll('.gallery time[datetime]').forEach(element => {
+      const value = element.getAttribute('datetime');
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return;
+      const date = new Date(`${value}T12:00:00Z`);
+      if (Number.isNaN(date.getTime())) return;
+      element.textContent = dates.formatToParts(date)
+        .filter(part => ['day', 'month', 'year'].includes(part.type))
+        .map(part => part.value).join(' ');
+    });
+  }
+
+  localize();
+  window.addEventListener('languagechange', localize);
+})();
+
+(() => {
+  const beatpost = document.querySelector('.beatpost');
+  const container = beatpost.querySelector('.azul');
+  const cartel = beatpost.querySelector('.cartel');
+  const hdmi = beatpost.querySelector('.hdmi');
+  const video = beatpost.querySelector('.video');
+  const photo = beatpost.querySelector('.monitor-photo');
+  const comingSoon = beatpost.querySelector('.coming-soon');
+  const buttons = [...document.querySelectorAll('nav button[data-screen]')];
+  const canvas = beatpost.querySelector('#espectrograma');
+  const ctx = canvas.getContext('2d');
+  const fpsInfo = beatpost.querySelector('#fps-info');
+  const colorInfo = beatpost.querySelector('#color-info');
+  const bitsInfo = beatpost.querySelector('#bits-info');
+  const levelInfo = beatpost.querySelector('#nivel');
+  const frequencyInfo = beatpost.querySelector('#frecuencia');
+  const clockInfo = beatpost.querySelector('#hora');
+  const noise = beatpost.querySelector('.tv-noise');
+  const noiseContext = noise.getContext('2d', { alpha: false });
+  let noiseFrame;
+  let noisePixels;
+  let noiseAnimation = 0;
+  let lastNoiseFrame = -Infinity;
+  let noiseSeed = (Math.random() * 0xffffffff) >>> 0 || 1;
+
+  function resizeNoise() {
+    const width = Math.max(1, Math.min(640, Math.round(container.clientWidth * 0.8)));
+    const height = Math.max(1, Math.round(width * container.clientHeight / Math.max(1, container.clientWidth)));
+    if (noiseFrame && noise.width === width && noise.height === height) return;
+    noise.width = width;
+    noise.height = height;
+    noiseFrame = noiseContext.createImageData(width, height);
+    noisePixels = new Uint32Array(noiseFrame.data.buffer);
+  }
+
+  function drawNoise(now = performance.now()) {
+    cancelAnimationFrame(noiseAnimation);
+    if (beatpost.dataset.screen !== 'static') return;
+    if (!document.hidden && now - lastNoiseFrame >= 1000 / 30) {
+      lastNoiseFrame = now;
+      resizeNoise();
+      for (let i = 0; i < noisePixels.length; i++) {
+        noiseSeed ^= noiseSeed << 13;
+        noiseSeed ^= noiseSeed >>> 17;
+        noiseSeed ^= noiseSeed << 5;
+        const shade = 20 + ((noiseSeed >>> 0) % 210);
+        noisePixels[i] = (0xff000000 | shade * 0x010101) >>> 0;
+      }
+      noiseContext.putImageData(noiseFrame, 0, 0);
+    }
+    noiseAnimation = requestAnimationFrame(drawNoise);
+  }
+
+  const visualScale = 6;
+  const spectrumDuration = 103.83675;
+  const fps = 2;
+  const speed = 10;
+  const visualStartedAt = performance.now();
+  canvas.width = 960;
+  canvas.height = 300;
+  const spectrum = new Image();
+  let hasSignal = false;
+  let mode = 'normal';
+  let screenTimer = 0;
+  let hdmiTimer = 0;
+  let selection = 0;
+  let waitingForVideo = false;
+  const pictures = new Map(buttons.filter(button => button.dataset.photo).map(button => {
+    const picture = new Image();
+    picture.src = button.dataset.photo;
+    return [button, picture];
+  }));
+
+  function playbackTime() {
+    const elapsed = Math.max(0, (performance.now() - visualStartedAt) / 1000);
+    return elapsed % spectrumDuration;
+  }
+
+  function drawSpectrum() {
+    if (!spectrum.complete || !spectrum.naturalWidth || document.hidden) return;
+    const width = canvas.width;
+    const height = canvas.height;
+    const sourceWidth = spectrum.naturalWidth / visualScale;
+    const sourceX = playbackTime() / spectrumDuration * spectrum.naturalWidth;
+    const firstWidth = Math.min(sourceWidth, spectrum.naturalWidth - sourceX);
+    const firstDestinationWidth = firstWidth / sourceWidth * width;
+    ctx.drawImage(spectrum, sourceX, 0, firstWidth, spectrum.naturalHeight, 0, 0, firstDestinationWidth, height);
+    if (firstWidth < sourceWidth) {
+      ctx.drawImage(spectrum, 0, 0, sourceWidth - firstWidth, spectrum.naturalHeight, firstDestinationWidth, 0, width - firstDestinationWidth, height);
+    }
+  }
+
+  function signalData(showVideo) {
+    fpsInfo.textContent = showVideo ? '30 FPS' : `${fps} FPS`;
+    colorInfo.textContent = showVideo ? 'RGB' : 'YCbCr 4:2:2';
+    bitsInfo.textContent = showVideo ? '10-bit' : '8-bit';
+  }
+
+  const random = (min, max) => min + Math.random() * (max - min);
+
+  function clearTimers() {
+    clearTimeout(screenTimer);
+    clearTimeout(hdmiTimer);
+  }
+
+  function showHdmi() {
+    clearTimeout(hdmiTimer);
+    hdmi.hidden = false;
+    hdmiTimer = setTimeout(() => { hdmi.hidden = true; }, 1000);
+  }
+
+  function staticScreen(next = blueScreen, duration = 1000) {
+    clearTimers();
+    beatpost.dataset.screen = 'static';
+    beatpost.classList.add('static');
+    drawNoise();
+    cartel.style.visibility = 'hidden';
+    hdmi.hidden = true;
+    screenTimer = setTimeout(next, duration);
+  }
+
+  function blueScreen() {
+    if (mode !== 'normal') return;
+    clearTimers();
+    beatpost.dataset.screen = 'blue';
+    photo.hidden = true;
+    container.classList.remove('show-drumkits');
+    comingSoon.hidden = true;
+    beatpost.classList.remove('static');
+    container.classList.remove('con-senal');
+    hasSignal = false;
+    signalData(false);
+    cartel.style.visibility = 'visible';
+    hdmi.hidden = true;
+    screenTimer = setTimeout(videoScreen, random(7000, 16000));
+  }
+
+  function videoScreen() {
+    if (mode !== 'normal') return;
+    clearTimers();
+    if (video.readyState < 2 || video.paused) {
+      waitingForVideo = true;
+      video.play().catch(() => {});
+      return;
+    }
+    waitingForVideo = false;
+    beatpost.dataset.screen = 'video';
+    comingSoon.hidden = true;
+    photo.hidden = true;
+    container.classList.remove('show-drumkits');
+    hasSignal = true;
+    signalData(true);
+    beatpost.classList.remove('static');
+    container.classList.add('con-senal');
+    cartel.style.visibility = 'hidden';
+    showHdmi();
+    screenTimer = setTimeout(() => staticScreen(), random(5000, 6000));
+  }
+
+  function resumeCycle() {
+    ++selection;
+    mode = 'normal';
+    buttons.forEach(button => button.setAttribute('aria-pressed', 'false'));
+    staticScreen(videoScreen);
+  }
+
+  function showPhoto(button) {
+    if (button.getAttribute('aria-pressed') === 'true') {
+      resumeCycle();
+      return;
+    }
+    const version = ++selection;
+    mode = 'option';
+    waitingForVideo = false;
+    hasSignal = true;
+    buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+    staticScreen(async () => {
+      const picture = pictures.get(button);
+      try { if (picture) await picture.decode(); }
+      catch {
+        if (version === selection) resumeCycle();
+        return;
+      }
+      if (version !== selection) return;
+      comingSoon.hidden = Boolean(picture);
+      if (picture) photo.src = picture.src;
+      photo.alt = button.textContent.trim();
+      const drumkits = button.dataset.screen === 'drumkits';
+      photo.hidden = drumkits || !picture;
+      container.classList.toggle('show-drumkits', drumkits);
+      beatpost.dataset.screen = 'photo';
+      beatpost.classList.remove('static');
+      container.classList.add('con-senal');
+      signalData(true);
+      fpsInfo.textContent = '0 FPS';
+      bitsInfo.textContent = '8-bit';
+      showHdmi();
+      screenTimer = setTimeout(resumeCycle, button.dataset.screen === 'contact' ? 10000 : 60000);
+    }, 600);
+  }
+
+
+  function showComingSoon() {
+    const version = ++selection;
+    staticScreen(() => {
+      if (version !== selection) return;
+      photo.hidden = true;
+      container.classList.remove('show-drumkits');
+      comingSoon.hidden = false;
+      beatpost.classList.remove('static');
+      beatpost.dataset.screen = 'coming-soon';
+      showHdmi();
+      screenTimer = setTimeout(resumeCycle, 60000);
+    }, 600);
+  }
+  beatpost.querySelectorAll('[data-kit]').forEach(button => button.addEventListener('click', showComingSoon));
+
+  buttons.forEach(button => button.addEventListener('click', () => showPhoto(button)));
+  video.addEventListener('playing', () => {
+    if (waitingForVideo && mode === 'normal') videoScreen();
+  });
+
+  let x = 0;
+  let y = 0;
+  let directionX = 1;
+  let directionY = 1;
+  let limitX = 0;
+  let limitY = 0;
+
+  function drawSign() {
+    cartel.style.transform = `translate(${x}px, ${y}px)`;
+  }
+
+  function resize() {
+    limitX = Math.max(0, container.clientWidth - cartel.offsetWidth);
+    limitY = Math.max(0, container.clientHeight - cartel.offsetHeight);
+    x = Math.min(x, limitX);
+    y = Math.min(y, limitY);
+    drawSign();
+  }
+
+  function updateData() {
+    clockInfo.textContent = new Date().toLocaleTimeString(document.documentElement.lang, { hour12: false });
+  }
+
+  levelInfo.textContent = '−∞ dBFS';
+  frequencyInfo.textContent = '— Hz';
+  video.muted = true;
+  video.loop = true;
+  video.disableRemotePlayback = true;
+  video.disablePictureInPicture = true;
+  videoScreen();
+  resize();
+  x = limitX / 2;
+  y = limitY / 2;
+  drawSign();
+  new ResizeObserver(resize).observe(container);
+
+  setInterval(() => {
+    if (document.hidden || hasSignal) return;
+    x += directionX * speed / fps;
+    y += directionY * speed * 0.65 / fps;
+    if (x <= 0 || x >= limitX) {
+      x = Math.max(0, Math.min(x, limitX));
+      directionX *= -1;
+    }
+    if (y <= 0 || y >= limitY) {
+      y = Math.max(0, Math.min(y, limitY));
+      directionY *= -1;
+    }
+    drawSign();
+  }, 1000 / fps);
+
+  document.addEventListener('visibilitychange', () => {
+    drawSpectrum();
+    if (!document.hidden && video.paused) video.play().catch(() => {});
+  });
+  setInterval(drawSpectrum, 33);
+  setInterval(updateData, 1000);
+  updateData();
+  spectrum.decoding = 'async';
+  spectrum.onload = drawSpectrum;
+  spectrum.src = 'assets/spectrum.png';
+})();
+
+const sidebar = document.querySelector('aside');
+const beatpost = document.querySelector('.beatpost');
+const mobileLayout = matchMedia('(max-width: 820px)');
+const fixedContent = [...sidebar.children].filter(element => element !== beatpost);
+
+function fitBeatpost() {
+  if (mobileLayout.matches) {
+    sidebar.style.removeProperty('--beatpost-size');
+    return;
+  }
+  const style = getComputedStyle(sidebar);
+  let available = sidebar.clientHeight - parseFloat(style.paddingTop) - parseFloat(style.paddingBottom);
+  for (const element of fixedContent) {
+    const spacing = getComputedStyle(element);
+    available -= element.getBoundingClientRect().height + parseFloat(spacing.marginTop) + parseFloat(spacing.marginBottom);
+  }
+  const spacing = getComputedStyle(beatpost);
+  available -= parseFloat(spacing.marginTop) + parseFloat(spacing.marginBottom);
+  sidebar.style.setProperty('--beatpost-size', `${Math.max(0, Math.floor(available * 4 / 3))}px`);
+}
+
+mobileLayout.addEventListener('change', fitBeatpost);
+const layoutObserver = new ResizeObserver(fitBeatpost);
+[sidebar, ...fixedContent].forEach(element => layoutObserver.observe(element));
+fitBeatpost();
+
+const gallery = document.querySelector('.gallery');
+setInterval(() => {
+  gallery.classList.toggle('monochrome');
+}, 10000);
+
+for (const event of ['selectstart', 'dragstart', 'contextmenu']) {
+  document.addEventListener(event, event => event.preventDefault());
+}
+
+Promise.allSettled([
+  document.fonts.ready,
+  ...[...sidebar.querySelectorAll('h1 img, nav img')].map(image => image.decode())
+]).then(() => {
+  fitBeatpost();
+  requestAnimationFrame(() => {
+    fitBeatpost();
+    document.documentElement.classList.remove('loading');
+  });
+});
+    </script>
+  </body>
+</html>
